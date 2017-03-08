@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Flask Intro - login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Insert new traffic data record and trigger the training process</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Road" name="road_id" value="{{
+          request.form.road_id }}"> <br>
+         <input type="text" placeholder="Direction" name="direction" value="{{
+          request.form.direction }}"> <br>
+        <input type="text" placeholder="Day of Week" name="dayOfWeek" value="{{
+          request.form.dayOfWeek }}"> <br>
+         <input type="text" placeholder="Time of Day" name="timeOfDay" value="{{
+          request.form.timeOfDay }}"> <br>
+        <input type="text" placeholder="Traffic Status" name="traffic_status" value="{{
+          request.form.traffic_status }}"> <br>
+        <input class="btn btn-default" type="submit" value="Insert">
+      </form>
+      {% if response %}
+        <p class="response"> {{ response }}
+      {% endif %}
+    <br><br>
+        <a href="/predict_ui">Input data and get the predicted traffic status</a>
+    <br>
+    <a href="/clear">Clear all traffic data records</a>
+    </div>
+  </body>
+</html>
